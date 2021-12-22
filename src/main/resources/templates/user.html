@@ -13,14 +13,16 @@
         <th>username</th>
         <th>surname</th>
         <th>age</th>
-        <th>status</th>
+        <th>email</th>
+        <th>role</th>
     </tr>
     <tr>
-        <td th:text="${user.getId()}"></td>
-        <td th:text="${user.getUsername()}"></td>
-        <td th:text="${user.getSurname()}"></td>
-        <td th:text="${user.getAge()}"></td>
-        <td th:text="${user.getStatus()}"></td>
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.getRoles()}"></td>
     </tr>
 </table>
 <a href="/logout">Logout</a>

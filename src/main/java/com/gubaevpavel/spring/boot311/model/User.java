@@ -27,8 +27,8 @@ public class User implements UserDetails {
     @Column(name = "age")
     private int age;
 
-    @Column(name = "status")
-    private String status;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "password")
     private String password;
@@ -46,11 +46,11 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String surname, int age, String status, String password, Set<Role> roles) {
+    public User(String username, String surname, int age, String email, String password, Set<Role> roles) {
         this.username = username;
         this.surname = surname;
         this.age = age;
-        this.status = status;
+        this.email = email;
         this.password = password;
         this.roles = roles;
     }
@@ -83,12 +83,12 @@ public class User implements UserDetails {
         this.age = age;
     }
 
-    public String getStatus() {
-        return status;
+    public String getEmail() {
+        return email;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setPassword(String password) {
@@ -104,12 +104,12 @@ public class User implements UserDetails {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return age == user.age && Objects.equals(username, user.username) && Objects.equals(surname, user.surname) && Objects.equals(status, user.status);
+        return age == user.age && Objects.equals(username, user.username) && Objects.equals(surname, user.surname) && Objects.equals(email, user.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, surname, age, status);
+        return Objects.hash(username, surname, age, email);
     }
 
     @Override
@@ -119,7 +119,7 @@ public class User implements UserDetails {
                 ", name='" + username + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ", status='" + status + '\'' +
+                ", status='" + email + '\'' +
                 '}';
     }
 
